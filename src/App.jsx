@@ -9,6 +9,7 @@ import Gallery from "./components/Gallery";
 import Shows from "./components/Shows";
 import Collabs from "./components/Collabs";
 import Footer from "./components/Footer";
+import Timeline from "./components/Timeline";
 
 function App() {
   return (
@@ -16,22 +17,13 @@ function App() {
       <Navbar />
       <Hero />
       <Stats />
+      <Collabs />
       <About />
+      <Timeline />
       <Discography />
       <Videos />
       <Gallery />
       <Shows />
-      <Collabs />
-
-      {/* Placeholders for other sections */}
-      <div
-        id="gallery"
-        className="h-screen bg-zinc-900 flex items-center justify-center border-b border-white/5"
-      >
-        <h2 className="text-4xl text-white/20 font-display">
-          Galeria (Em Breve)
-        </h2>
-      </div>
 
       <Footer />
     </div>

@@ -5,21 +5,18 @@ import { Play } from "lucide-react";
 const videos = [
   {
     title: "Relationship Goals",
-    image:
-      "https://images.unsplash.com/photo-1516280440614-6697288d5d38?q=80&w=2070&auto=format&fit=crop",
-    link: "#",
+    image: "/assets/images/video_relationship.jpg",
+    link: "https://www.youtube.com/watch?v=aL3pCqYqM3M",
   },
   {
     title: "Minha Dor",
-    image:
-      "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070&auto=format&fit=crop",
-    link: "#",
+    image: "/assets/images/video_minhador.jpg",
+    link: "https://www.youtube.com/watch?v=S7lS4r7vF54",
   },
   {
     title: "Propaganda",
-    image:
-      "https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=2070&auto=format&fit=crop",
-    link: "#",
+    image: "/assets/images/video_propaganda.jpg",
+    link: "https://www.youtube.com/watch?v=Z7q3X8XqZ5I",
   },
 ];
 
@@ -34,20 +31,28 @@ const Videos = () => {
             </h2>
             <div className="h-1 w-20 bg-prodigio-red"></div>
           </div>
-          <button className="hidden md:block text-white border border-white/20 px-8 py-3 hover:bg-white hover:text-black transition-all uppercase text-sm tracking-widest">
+          <a
+            href="https://www.youtube.com/@Prodigiofs"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:block text-white border border-white/20 px-8 py-3 hover:bg-white hover:text-black transition-all uppercase text-sm tracking-widest"
+          >
             Ver Canal Oficial
-          </button>
+          </a>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {videos.map((video, index) => (
-            <motion.div
+            <motion.a
               key={index}
+              href={video.link}
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group relative aspect-video bg-black cursor-pointer overflow-hidden border border-white/10"
+              className="group relative aspect-video bg-black cursor-pointer overflow-hidden border border-white/10 block"
             >
               <img
                 src={video.image}
@@ -69,7 +74,7 @@ const Videos = () => {
                   {video.title}
                 </h3>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
 

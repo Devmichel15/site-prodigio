@@ -1,41 +1,53 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { PlayCircle } from "lucide-react";
+import { PlayCircle, Award } from "lucide-react";
 
 const albums = [
   {
-    title: "Prodigios",
+    title: "Prodígios",
     year: "2015",
-    image:
-      "https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=2070&auto=format&fit=crop",
+    image: "/assets/images/album_prodigios.jpg",
     link: "#",
   },
   {
     title: "King2DA",
     year: "2018",
-    image:
-      "https://images.unsplash.com/photo-1493225255756-d6216ae3b624?q=80&w=2070&auto=format&fit=crop",
+    image: "/assets/images/album_king2da.jpg",
     link: "#",
   },
   {
     title: "Castelos",
     year: "2019",
-    image:
-      "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=2070&auto=format&fit=crop",
+    image: "/assets/images/album_castelos.jpg",
     link: "#",
   },
   {
     title: "All Star",
     year: "2020",
-    image:
-      "https://images.unsplash.com/photo-1514525253440-b393452e2729?q=80&w=1942&auto=format&fit=crop",
+    image: "/assets/images/album_allstar.jpg",
     link: "#",
+  },
+];
+
+const promoItems = [
+  {
+    title: "Nomeação Angola VMAs 2020",
+    type: "Poster Oficial",
+    image: "/assets/images/promo_vmas.png",
+  },
+  {
+    title: "Prodígios - O Álbum",
+    type: "Capa Oficial",
+    image: "/assets/images/album_prodigios.jpg",
   },
 ];
 
 const Discography = () => {
   return (
-    <section id="discography" className="py-24 bg-black relative">
+    <section
+      id="discography"
+      className="py-24 bg-black relative border-t border-white/5"
+    >
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -52,7 +64,8 @@ const Discography = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Albums Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-24">
           {albums.map((album, index) => (
             <motion.div
               key={index}
@@ -68,7 +81,7 @@ const Discography = () => {
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-70 group-hover:opacity-100"
               />
 
-              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4">
+              <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4">
                 <h3 className="text-2xl font-display text-white uppercase mb-1">
                   {album.title}
                 </h3>
@@ -81,6 +94,45 @@ const Discography = () => {
               </div>
             </motion.div>
           ))}
+        </div>
+
+        {/* Promo / Press Section */}
+        <div className="mt-20">
+          <div className="flex items-center gap-4 mb-10">
+            <div className="h-px bg-white/10 flex-1"></div>
+            <h3 className="text-2xl font-display text-white/50 uppercase">
+              Promo & Press
+            </h3>
+            <div className="h-px bg-white/10 flex-1"></div>
+          </div>
+
+          <div className="flex flex-col md:flex-row gap-8 justify-center items-center">
+            {promoItems.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.2 + index * 0.1 }}
+                className="relative w-full md:w-96 group"
+              >
+                <div className="aspect-3/4 overflow-hidden border border-white/10 bg-zinc-900">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+                  />
+                </div>
+                <div className="mt-4 text-center">
+                  <h4 className="text-white font-bold uppercase tracking-wider text-sm">
+                    {item.title}
+                  </h4>
+                  <span className="text-prodigio-red text-xs uppercase font-bold">
+                    {item.type}
+                  </span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
 
         <div className="text-center mt-16">

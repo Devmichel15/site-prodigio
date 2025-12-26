@@ -24,7 +24,7 @@ const About = () => {
             <div className="relative aspect-[3/4] grayscale hover:grayscale-0 transition-all duration-700 ease-in-out">
               {/* Placeholder Image */}
               <img
-                src="https://images.unsplash.com/photo-1598518141891-605e7cc8e7fa?q=80&w=1968&auto=format&fit=crop"
+                src="/assets/images/about_art.jpg"
                 alt="Prodígio Art"
                 className="w-full h-full object-cover object-center shadow-2xl"
               />

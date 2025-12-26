@@ -25,7 +25,7 @@ const shows = [
   {
     date: "31 DEZ",
     city: "Benguela, AO",
-    venue: "Praça Morena",
+    venue: "Praia Morena",
     status: "Em Breve",
   },
 ];
