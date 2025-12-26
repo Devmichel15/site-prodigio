@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #000000;
+  --color-secondary: #4a2e1d;
+  --color-accent: #8b0000;
+
+  --font-display: "Black Ops One", cursive; /* or Saira Stencil One */
+  --font-body: "Inter", sans-serif;
+}
+
+@theme {
+  --color-prodigio-black: var(--color-primary);
+  --color-prodigio-brown: var(--color-secondary);
+  --color-prodigio-red: var(--color-accent);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+
+  --animate-marquee: marquee 35s linear infinite;
+  --animate-marquee2: marquee2 35s linear infinite;
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  @keyframes marquee2 {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+}
+
+body {
+  background-color: var(--color-primary);
+  color: white;
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: white;
+}
